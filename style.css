@@ -18,7 +18,7 @@ body{
 	font-family: 'Homemade Apple', cursive;
 }
 
-.btn{
+.btn-success{
 	margin: 10em; 
 	font-family: 'Sigmar One', cursive;
 	transition: all 1s;
