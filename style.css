@@ -20,7 +20,8 @@ body{
 
 .btn-success{
 	margin: 10em; 
-	font-family: 'Sigmar One', cursive;
+	/*font-family: 'Sigmar One', cursive;*/
+	font-family: 'Times New Roman', cursive;
 	transition: all 1s;
 }
 
