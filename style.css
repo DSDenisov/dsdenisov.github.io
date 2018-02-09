@@ -1,0 +1,68 @@
+html, body{
+	/*border: 2px solid green;*/
+	
+	/*width: 100%;*/
+	background-color: #884422;
+	background: url(https://images.unsplash.com/photo-1510148199876-8a856ee41d42?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a82c3751ed73cbbd31bbaef3d7233a83&auto=format&fit=crop&w=1650&q=80) no-repeat center center fixed;
+	background-size: cover;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+
+.mytext{
+	font-family: 'Pacifico', cursive;
+	text-align: center;
+	color: white;
+	text-shadow: 5px 5px 5px black;
+}
+.l1{
+	font-size: 2em;
+}
+.l2{
+	font-size: 3em;
+}
+.l3{
+	font-size: 4rem;
+}
+
+
+.btn-my{
+	font-family: 'Rammetto One', cursive;
+	background-color: rgba(0,0,0,0);
+	border: rgba(0,0,0,0);
+	/*transition: all 1.5s;*/
+}
+.btn-my:hover {
+	background-color: rgba(0,0,0,0);
+	border: rgba(0,0,0,0);
+}
+.btn-my:focus {outline:0;}
+
+
+.btn-txt{
+
+	color: black;
+	transition: all 1.5s;
+	text-shadow: 2px 2px 3px white;
+
+}
+.btn-txt:hover {
+	color: white;
+	transform: scale(2.5);
+	text-shadow: 2px 2px 3px black;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.footer{
+	text-shadow: -1px -1px 3px white;
+
+}
