@@ -47,7 +47,7 @@ a p {
 
 a p:hover {
 	color: white;
-	transform: scale(2);
+	transform: translateY(10px) scale(2);
 	text-shadow: 2px 2px 3px black;
 }
 a:hover, a:visited, a:link, a:active
