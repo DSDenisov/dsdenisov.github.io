@@ -6,22 +6,20 @@ var lItem = document.getElementsByTagName('li');
 
 // listening all existing items
 function foo (item){
-	
 	item.addEventListener("click", function(){
     item.classList.toggle("done");
 	});
 }
 
-function spanWraper(parent) {
-	
+function addButtonAfter(liItem) { //adding button after
+	var btn = document.createElement("button");
+   	btn.appendChild(document.createTextNode("delete"));
+   	liItem.parentNode.insertBefore(btn, liItem.nextSibling); 
 }
 
 for (var i=0; i<lItem.length; i++){
 	foo(lItem[i]);
-// var btn = document.createElement("button");
-//    btn.appendChild(document.createTextNode("delete"));
-//    lItem[i].appendChild(btn);
-
+	addButtonAfter(lItem[i]);
 };
 
 
@@ -37,6 +35,7 @@ function createListElement() {
 	ul.appendChild(li);
 
 	foo(li);
+	addButtonAfter(li);
 	input.value = "";
 }
 
