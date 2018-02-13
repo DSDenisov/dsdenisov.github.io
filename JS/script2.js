@@ -23,8 +23,8 @@ var todos = [
 // 	i++;
 // } while (i<10)
 
-function todo(todo, i) {
+function todof(todo, i) {
 	console.log(todo, i)
 }
 
-todos.forEach(todo)
+todos.forEach(todof)
