@@ -22,3 +22,7 @@
   text-decoration: line-through;
 }
 
+.line{
+  display: flex;
+  flex-direction: row;
+}
