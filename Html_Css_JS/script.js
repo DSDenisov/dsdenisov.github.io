@@ -11,9 +11,15 @@ function foo (item){
 	});
 }
 
+function delItem() {
+	ul.removeChild(this.previousSibling);
+	ul.removeChild(this);
+}
+
 function addButtonAfter(liItem) { //adding button after
 	var btn = document.createElement("button");
    	btn.appendChild(document.createTextNode("delete"));
+   	btn.addEventListener("click",delItem);
    	liItem.parentNode.insertBefore(btn, liItem.nextSibling); 
 }
 
@@ -21,8 +27,6 @@ for (var i=0; i<lItem.length; i++){
 	foo(lItem[i]);
 	addButtonAfter(lItem[i]);
 };
-
-
 
 
 function inputLength() {
