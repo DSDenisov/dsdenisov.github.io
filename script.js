@@ -1,0 +1,2 @@
+function myFunction() {
+    document.getElementsByTagName('body').style.background = "https://images.unsplash.com/photo-1507637246364-d8fce4a9850a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=00dbdf5c6801d1b76bf753ae9569cbca&auto=format&fit=crop&w=1500&q=80) no-repeat center center fixed;"
