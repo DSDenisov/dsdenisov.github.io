@@ -3,10 +3,11 @@ html, body{
 	
 	
 	/*background-color: #884422;*/
-	background: url(https://images.unsplash.com/photo-1494822493217-c9840aba840c?ixlib=rb-0.3.5&s=bb4416e68b406d54ec5e46943df976b5&auto=format&fit=crop&w=1534&q=80) no-repeat center center fixed;
+	background: url(https://images.unsplash.com/photo-1508520321935-0cf9c66f9bec?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0b34a79523e1747183e922d7fc83541&auto=format&fit=crop&w=1350&q=80) no-repeat center center fixed;
 	background-size: cover;
 	height: 100%;
 	width: 100%;
+	color: white;
 
 	display: flex;
 	flex-direction: column;
@@ -14,19 +15,34 @@ html, body{
 	align-items: center;
 }
 
-.menu{
+
+.container .row .menu a{
+	font-family: 'Alfa Slab One', cursive;
+	text-align: center;
+	color: white;
+	text-shadow: 5px 5px 5px black;
+
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	margin-top: 15px;
+	color: white;
+	transition: all 1s;
+
 }
 
-.mytext{
-	font-family: 'Pacifico', cursive;
+.container .row .menu a:hover{
+	
+	/*font-family: 'UnifrakturCook', cursive;*/
 	text-align: center;
+	text-rendering: 
 	color: white;
-	text-shadow: 5px 5px 5px black;
+	transform: scale(1.5, 1.5);
+	text-decoration: none;
 }
+
+
+
 
 /*a p {
 	color: black;
@@ -57,43 +73,70 @@ a:hover, a:visited, a:link, a:active
    text-align: center;
 }
 */
+
 .scroll{
-	overflow: scroll;
-    overflow-x: hidden;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	overflow-y: scroll;
+	overflow-x: hidden;
 	height: 70em;
+}
+::-webkit-scrollbar{
+	width: 8px;
+	background-color: black;
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background-color: rgb(196, 0, 0);
+	box-shadow: inset 0, 0, 6px, rgba(0, 0, 0, .3);
 }
 
 .plates{
-	
-	border: solid red 2px;
+	/*border: solid red 2px;*/
 	height: 12em;
 	border-radius: 5px;
 	margin: 1em 1em 1em 1em;
+	background-color: rgba(0, 0, 0, 0.5);
+	transition: all 1s;
 }
-#header{
+.plates:hover{
+	transform: scale(1.1, 1.1);
+}
+/*#header{
 	position: fixed;
 	top: 1%;
 	border-radius: 5px;
 	background-color: white;
 	font-size: 80%;
-}
+}*/
 
 #footer{
 /*this is div oroperties*/
-	bottom: 1%;
+	bottom: 3%;
 	width: 90%;
 	border-radius: 5px;
 	position: static;
-	/*background-color: rgba(255,255,255,0.1);*/
+	/*background-color: rgba(255,255,255,0.5);*/
 /*this is text inside div properties*/
-	color: black;
+	color: white;
 	text-align: center;
 	font-size: 80%;
+	
 }
-a:visited, a:link, a:active{
+/*a:visited, a:link, a:active{
 	text-decoration: none;
-	color: black;
-}
-a:hover{
+	/*color: white;*/
+}*/
+#turelink{
+	transition: all 1.5s;
 	color: white;
 }
+#turelink:hover{
+	text-decoration: underline;
+	color: white;
+	transform: translateY(15px) scale(10);
+}
+#turelink:visited{
+	color: white;
+
