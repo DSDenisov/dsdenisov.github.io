@@ -83,7 +83,7 @@ a:hover, a:visited, a:link, a:active
 }
 ::-webkit-scrollbar{
 	width: 8px;
-	background-color: black;
+	/*background-color: black;*/
 	border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb{
@@ -94,7 +94,7 @@ a:hover, a:visited, a:link, a:active
 
 .plates{
 	/*border: solid red 2px;*/
-	height: 12em;
+	height: 15.5em;
 	border-radius: 5px;
 	margin: 1em 1em 1em 1em;
 	background-color: rgba(0, 0, 0, 0.5);
