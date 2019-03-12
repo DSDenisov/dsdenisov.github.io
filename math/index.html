@@ -3,10 +3,41 @@
 <head>
 	<title>Math for PLATON</title>
 </head>
+<style type="text/css">
+	#start{
+		border-radius: 12px;
+		padding: 14px 40px;
+		background-color: #4CAF50;
+		font-size: 18px;
+	}
+	#show{
+		border-radius: 12px;
+		padding: 14px 40px;
+		background-color: #f44336;
+		font-size: 18px;
+	}
+	.btns{
+		text-align: center;
+		margin: auto;
+	  width: 100%;
+	  padding: 10px;
+	}
+	.btn{
+		margin:0px;
+    padding:0px;
+	}
+	.btn:hover{
+		opacity: 0.8;
+	}
+	.btn:focus {
+  	outline: none;
+	}
+</style>
 <body>
-
-<button id = "startbtn" type="button" onclick="pRoblems()">get the problems</button>
-<button id = "show" type="button" onclick="aNswers()">show answers</button>
+<div class="btns">
+	<button id = "start" class ="btn" type="button" onclick="pRoblems()">get the problems</button>
+	<button id = "show" class ="btn" type="button" onclick="aNswers()">show answers</button>
+</div>
 <br><br><br><br><br>
 <script>
 function getRandomInt(min, max) {
