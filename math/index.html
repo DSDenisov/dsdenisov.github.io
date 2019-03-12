@@ -5,18 +5,41 @@
 </head>
 <body>
 
-<button type="button" onclick="myFunction()">get the problems</button>
-
+<button id = "startbtn" type="button" onclick="pRoblems()">get the problems</button>
+<button id = "show" type="button" onclick="aNswers()">show answers</button>
+<br><br><br><br><br>
 <script>
-function myFunction(){
-document.getElementById("problem").innerHTML = 5 + 6;
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
 }
+var problem = '<table id = "tsc" style="width:100%">';
+var answer = '<table id="ans">';
+for (i = 0; i < 10; i++){
+	problem = problem+"<tr>"
+	for (j = 0; j < 3; j++) {
+		problem = problem + "<th><h2>"
+	  var a = getRandomInt(12, 30)
+		var b = getRandomInt(12, 30)
+		problem = problem+a +" x "+ b +" = "+ "___"
+		problem = problem + "</h2></th>" 
+	}
+	problem = problem+"</tr>"
+}
+problem = problem+"</table>";
+console.log(problem)
+function pRoblems(){
+	document.getElementById("print").innerHTML = problem;
+}
+
+function aNswers(){
+	document.getElementById("print").innerHTML = "<h3>"+answer+"</h3>";
+}
+
 </script>
 
-<div id = "problem">
-	
 
 
+<div id = "print">
 </div>
 
 
