@@ -16,6 +16,13 @@
 		background-color: #f44336;
 		font-size: 18px;
 	}
+	#printer{
+		border-radius: 12px;
+		padding: 14px 40px;
+		background-color: #9400D3;
+		font-size: 18px;
+		color: white;
+	}
 	.btns{
 		text-align: center;
 		margin: auto;
@@ -45,10 +52,9 @@
 <div class="btns">
 	<button id = "start" class ="btn" type="button" onclick="pRoblems()">get the problems</button>
 	<button id = "show" class ="btn" type="button" onclick="aNswers()">show answers</button>
-
+	<button id = "printer" class="btn" type="button" onclick="window.print();">PRINT</button>
 </div>
 <script>
-
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
