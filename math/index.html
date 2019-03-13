@@ -32,6 +32,14 @@
 	.btn:focus {
   	outline: none;
 	}
+	.txt{
+		color: BLACK;
+		font-size:150%;
+	}
+	.txt em{
+		color: RED;
+	}
+
 </style>
 <body>
 <div class="btns">
@@ -44,26 +52,34 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 var problem = '<table id = "tsc" style="width:100%">';
-var answer = '<table id="ans">';
-for (i = 0; i < 10; i++){
+var answer = '<table id="ans" style="width:100%">';
+for (i = 0; i < 5; i++){
 	problem = problem+"<tr>"
 	for (j = 0; j < 3; j++) {
-		problem = problem + "<th><h2>"
+		answer = answer + "<th><p class='txt'>"
+		problem = problem + "<th><p class='txt'>"
 	  var a = getRandomInt(12, 30)
 		var b = getRandomInt(12, 30)
-		problem = problem+a +" x "+ b +" = "+ "___"
-		problem = problem + "</h2></th>" 
+		
+		problem = problem+a +" x "+ b +" = "
+		answer = answer+a +" x "+ b +" = " +"<em>"+a*b+"</em>"
+		
+		problem = problem + "___"
+		problem = problem + "</p></th>"
+		answer = answer + "</p></th>" 
 	}
-	problem = problem+"</tr>"
+	answer = answer+"</tr>";
+	problem = problem+"</tr>";
 }
-problem = problem+"</table>";
+answer = answer + "</table>";
+problem = problem + "</table>";
 console.log(problem)
 function pRoblems(){
 	document.getElementById("print").innerHTML = problem;
 }
 
 function aNswers(){
-	document.getElementById("print").innerHTML = "<h3>"+answer+"</h3>";
+	document.getElementById("print").innerHTML = answer;
 }
 
 </script>
