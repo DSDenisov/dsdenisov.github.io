@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Math for PLATON</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 </head>
 <style type="text/css">
 	#start{
@@ -39,13 +41,27 @@
 	.btn:focus {
   	outline: none;
 	}
-	.txt{
+	em{
+		color: red;
+		visibility: hidden;
+	}
+	span{
+		border:solid;
+		display: inline-block;
+  	width: 100px;
+	}
+	.one{
 		color: BLACK;
-		font-size:150%;
+		font-size:200%;
+		text-align: center;
+		padding-top: 3%;
+		padding-bottom: 3%;
+		font-family: 'Gloria Hallelujah', cursive;
 	}
-	.txt em{
-		color: RED;
+	#print{
+		padding-top: 3%;
 	}
+
 
 </style>
 <body>
@@ -53,36 +69,21 @@
 	<button id = "start" class ="btn" type="button" onclick="pRoblems()">get the problems</button>
 	<button id = "show" class ="btn" type="button" onclick="aNswers()">show answers</button>
 	<button id = "printer" class="btn" type="button" onclick="window.print();">PRINT</button>
+	<br>
 </div>
 <script>
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
+var problem = "";
 
-var problem = '<table id = "tsc" style="width:100%">';
-var answer = '<table id = "ans" style="width:100%">';
-
-
-for (i = 0; i < 10; i++){
-	problem = problem+"<tr>"
-	for (j = 0; j < 3; j++) {
-		answer = answer + "<th><p class='txt'>"
-		problem = problem + "<th><p class='txt'>"
-	  var a = getRandomInt(12, 30)
-		var b = getRandomInt(12, 30)
-		
-		problem = problem+a +" x "+ b +" = "
-		answer = answer+a +" x "+ b +" = " +"<em>"+a*b+"</em>"
-		
-		problem = problem + "___"
-		problem = problem + "</p></th>"
-		answer = answer + "</p></th>" 
-	}
-	answer = answer+"</tr>";
-	problem = problem+"</tr>";
+for (i = 0; i < 30; i++){
+  var a = getRandomInt(12, 30)
+	var b = getRandomInt(12, 30)
+	var c = a*b;
+	problem = problem+"<div class='col-4'> <div class='one'>"+a+" x "+b+" = <span><em>"+c+"</em></span> </div> </div>"
+	
 }
-answer = answer + "</table>";
-problem = problem + "</table>";
 
 
 function pRoblems(){
@@ -90,14 +91,18 @@ function pRoblems(){
 }
 
 function aNswers(){
-	document.getElementById("print").innerHTML = answer;
+	var elements = document.getElementsByTagName("em")
+	for (var i = elements.length - 1; i >= 0; i--) {
+		elements[i].style.visibility = "visible"
+	}
 }
 
 </script>
 
-
-
-<div id = "print">
+<div  class="container">
+	<div id = "print" class="row align-items-start">
+		
+	</div>
 </div>
 
 
