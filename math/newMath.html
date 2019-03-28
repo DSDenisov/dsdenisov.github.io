@@ -22,7 +22,7 @@
 		font-size: 18px;
 	}
 	#show:disabled{
-		opacity: 0.5;
+		opacity: 0.8;
 	} 
 	#show:disabled:hover{
 	}
@@ -53,22 +53,23 @@
     padding:0px;
 	}
 	.btn:hover{
-		opacity: 0.5;
+		opacity: 0.8;
 	}
 	.btn:focus {
   	outline: none;
 	}
-	em{
+	/*em{
 		color: red;
 		visibility: hidden;
-	}
+	}*/
 	span{
-		border:solid;
+		/*border:solid;
+		border-color: white;*/
 		display: inline-block;
   	width: 105px;
 	}
 	.one{
-		color: BLACK;
+		color: white;
 		font-size:200%;
 		text-align: center;
 		padding-top: 3%;
@@ -80,10 +81,25 @@
 	}
 	input { 
     text-align: center; 
-    color: blue;
 	}
 	#no{
-		background-color: #D3D3D3;
+		background-color: #25325c;
+		color: white;
+	}
+	.win{
+		background-color: #25325c;
+    color: #dacda3;
+    border-radius: 12px;
+    margin:0px;
+    padding:0px;
+}
+	.win:focus, textarea:focus{
+		background-color: black;
+		outline: none;
+	}
+
+body{
+		background-color: #222;
 	}
 
 
@@ -120,7 +136,7 @@ function pRoblems(){
 			var c = a*b;
 			anObject["i"+i] = c;
 			problem = problem+"<div class='col-4'> <div class='one'>"+a+" x "+b+" = <span><input id ='i"+i
-													+"' type='text' name='answer' size='4'></span> </div> </div>"
+													+"' class = 'win' type='text' name='answer' size='6'></span> </div> </div>"
 		}
 		document.getElementById("print").innerHTML = problem;
 		document.getElementById("start").style.visibility = "hidden";
@@ -130,11 +146,16 @@ function pRoblems(){
 }
 
 function aNswers(){
-	// var result = {}
 	for (var i = 0; i < num; i++) {				//HERE
 		if (anObject["i"+i] == document.getElementById("i"+i).value){
-			document.getElementById("i"+i).style.color = "green";
-		} else {document.getElementById("i"+i).style.color = "red";}
+			document.getElementById("i"+i).style.color = "#44de68"; // green
+		} else {
+			document.getElementById("i"+i).value = "";
+			document.getElementById("i"+i).placeholder = "wrong";
+			document.getElementById("i"+i).disabled = false;
+			document.getElementById("done").style.visibility = "visible";
+			document.getElementById("show").disabled = true;
+		} // red
 	}
 
 }
@@ -145,7 +166,14 @@ function done(){
 			bool = true;
 		}else {bool = false}
 	}
-	if (bool) {document.getElementById("show").disabled = false;}
+	if (bool) {
+		document.getElementById("show").disabled = false;
+		document.getElementById("done").style.visibility = "hidden";
+		var win = document.getElementsByClassName("win")
+		for (var i = win.length - 1; i >= 0; i--) {
+			win[i].disabled = true;
+		}
+	}
 }
 
 </script>
