@@ -78,6 +78,10 @@
 	}
 	input { 
     text-align: center; 
+    color: blue;
+	}
+	#no{
+		background-color: #D3D3D3;
 	}
 
 
@@ -88,52 +92,58 @@
 		<input type="" name="">
 	</div> -->
 <div class="btns">
+	<input id = "no" class ="btn" type="text" name="num" placeholder="How many?" size = 17>
 	<button id = "start" class ="btn" type="button" onclick="pRoblems()">get the problems</button>
 	<button id = "show" class ="btn" type="button" onclick="aNswers()" disabled>show answers</button>
-	<button id = "printer" class="btn" type="button" onclick="window.print();">PRINT</button>
+	<!-- <button id = "printer" class="btn" type="button" onclick="window.print();">PRINT</button> -->
 	<br>
 </div>
 <script>
+
+var num;
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 var problem = "";
 var anObject = {};
-for (i = 0; i < 30; i++){
-  var a = getRandomInt(12, 30)
-	var b = getRandomInt(12, 30)
-	var c = a*b;
-	anObject["i"+i] = c;
-	problem = problem+"<div class='col-4'> <div class='one'>"+a+" x "+b+" = <span><input id ='i"+i
-											+"' type='text' name='answer' size='4'></span> </div> </div>"
-	
-}
+
 
 
 function pRoblems(){
-	document.getElementById("print").innerHTML = problem;
-	document.getElementById("start").style.visibility = "hidden";
-	document.getElementById("done").style.visibility = "visible";
+	num = document.getElementById("no").value
+	if (num && !isNaN(num)) {
+		for (i = 0; i < num; i++){							//HERE
+		  var a = getRandomInt(12, 30)
+			var b = getRandomInt(12, 30)
+			var c = a*b;
+			anObject["i"+i] = c;
+			problem = problem+"<div class='col-4'> <div class='one'>"+a+" x "+b+" = <span><input id ='i"+i
+													+"' type='text' name='answer' size='4'></span> </div> </div>"
+		}
+		document.getElementById("print").innerHTML = problem;
+		document.getElementById("start").style.visibility = "hidden";
+		document.getElementById("done").style.visibility = "visible";
+		document.getElementById("no").disabled = true;
+	} else {alert("Please enter valid number...");}
 }
 
 function aNswers(){
-	// var spans = document.getElementsByTagName("span")
-	// for (var i = spans.length - 1; i >= 0; i--) {
-	// 	spans[i].style.color = "none";
-	// }
-	var result = {}
-	for (var i = 0; i < 30; i++) {
+	// var result = {}
+	for (var i = 0; i < num; i++) {				//HERE
 		if (anObject["i"+i] == document.getElementById("i"+i).value){
-			result[i] = "True"
-		} else {result[i] = "False"}
+			document.getElementById("i"+i).style.color = "green";
+		} else {document.getElementById("i"+i).style.color = "red";}
 	}
-	// var inputs = document.getElementById("em")
-	// for (var i = ems.length - 1; i >= 0; i--) {
-	// 	ems[i].style.visibility = "visible";
-	// }
+
 }
 function done(){
-	document.getElementById("show").disabled = false;
+	var bool = false;
+	for (var i = 0; i < num; i++) {				//HERE
+		if(document.getElementById("i"+i).value){
+			bool = true;
+		}else {bool = false}
+	}
+	if (bool) {document.getElementById("show").disabled = false;}
 }
 
 </script>
