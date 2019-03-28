@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Math for PLATON</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</head>
+<style type="text/css">
+	#start{
+		border-radius: 12px;
+		padding: 14px 40px;
+		background-color: #4CAF50;
+		font-size: 18px;
+	}
+
+	#show{
+		border-radius: 12px;
+		padding: 14px 40px;
+		background-color: #f44336;
+		font-size: 18px;
+	}
+	#show:disabled{
+		opacity: 0.5;
+	} 
+	#show:disabled:hover{
+	}
+	#printer{
+		border-radius: 12px;
+		padding: 14px 40px;
+		background-color: #9400D3;
+		font-size: 18px;
+		color: white;
+	}
+	#done{
+		border-radius: 12px;
+		padding: 14px 40px;
+		background-color: black;
+		font-size: 18px;
+		color: white;
+		visibility: hidden;
+		width: 70%;
+	}
+	.btns{
+		text-align: center;
+		margin: auto;
+	  width: 100%;
+	  padding: 10px;
+	}
+	.btn{
+		margin:0px;
+    padding:0px;
+	}
+	.btn:hover{
+		opacity: 0.5;
+	}
+	.btn:focus {
+  	outline: none;
+	}
+	em{
+		color: red;
+		visibility: hidden;
+	}
+	span{
+		border:solid;
+		display: inline-block;
+  	width: 105px;
+	}
+	.one{
+		color: BLACK;
+		font-size:200%;
+		text-align: center;
+		padding-top: 3%;
+		padding-bottom: 3%;
+		font-family: 'Gloria Hallelujah', cursive;
+	}
+	#print{
+		padding-top: 3%;
+	}
+	input { 
+    text-align: center; 
+	}
+
+
+</style>
+<body>
+
+<!-- 	<div>
+		<input type="" name="">
+	</div> -->
+<div class="btns">
+	<button id = "start" class ="btn" type="button" onclick="pRoblems()">get the problems</button>
+	<button id = "show" class ="btn" type="button" onclick="aNswers()" disabled>show answers</button>
+	<button id = "printer" class="btn" type="button" onclick="window.print();">PRINT</button>
+	<br>
+</div>
+<script>
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+var problem = "";
+var anObject = {};
+for (i = 0; i < 30; i++){
+  var a = getRandomInt(12, 30)
+	var b = getRandomInt(12, 30)
+	var c = a*b;
+	anObject["i"+i] = c;
+	problem = problem+"<div class='col-4'> <div class='one'>"+a+" x "+b+" = <span><input id ='i"+i
+											+"' type='text' name='answer' size='4'></span> </div> </div>"
+	
+}
+
+
+function pRoblems(){
+	document.getElementById("print").innerHTML = problem;
+	document.getElementById("start").style.visibility = "hidden";
+	document.getElementById("done").style.visibility = "visible";
+}
+
+function aNswers(){
+	// var spans = document.getElementsByTagName("span")
+	// for (var i = spans.length - 1; i >= 0; i--) {
+	// 	spans[i].style.color = "none";
+	// }
+	var result = {}
+	for (var i = 0; i < 30; i++) {
+		if (anObject["i"+i] == document.getElementById("i"+i).value){
+			result[i] = "True"
+		} else {result[i] = "False"}
+	}
+	// var inputs = document.getElementById("em")
+	// for (var i = ems.length - 1; i >= 0; i--) {
+	// 	ems[i].style.visibility = "visible";
+	// }
+}
+function done(){
+	document.getElementById("show").disabled = false;
+}
+
+</script>
+
+<div  class="container">
+	<div id = "print" class="row align-items-start">
+		
+	</div>
+</div>
+<div class="btns">
+	<button id = "done" class="btn" type="button" onclick="done()">DONE !</button>
+</div>
+</body>
+</html>
